@@ -1,0 +1,51 @@
+<div class="card-form">
+  <form [formGroup]="cardForm" (ngSubmit)="submitForm()">
+    <div>
+      <label for="cardName">Nom de la Carte:</label>
+      <input id="cardName" formControlName="cardName" type="text" placeholder="Nom de la carte" />
+      <div *ngIf="cardForm.get('cardName')?.invalid && cardForm.get('cardName')?.touched">
+        <small *ngIf="cardForm.get('cardName')?.errors?.['required']">Le nom est obligatoire.</small>
+        <small *ngIf="cardForm.get('cardName')?.errors?.['minlength']">Au moins 3 caractères.</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="cardNumber">Numéro de Carte:</label>
+      <input id="cardNumber" formControlName="cardNumber" type="text" placeholder="1234 5678 9012 3456" mask="0000 0000 0000 0000"/>
+      <div *ngIf="cardForm.get('cardNumber')?.invalid && cardForm.get('cardNumber')?.touched">
+        <small *ngIf="cardForm.get('cardNumber')?.errors?.['required']">Le numéro est obligatoire.</small>
+        <small *ngIf="cardForm.get('cardNumber')?.errors?.['pattern']">Numéro invalide.</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="ccv">CCV:</label>
+      <input id="ccv" formControlName="ccv" type="text" placeholder="123" [hiddenInput]="true" mask="XXX"/>
+      <div *ngIf="cardForm.get('ccv')?.invalid && cardForm.get('ccv')?.touched">
+        <small *ngIf="cardForm.get('ccv')?.errors?.['required']">Le CCV est obligatoire.</small>
+        <small *ngIf="cardForm.get('ccv')?.errors?.['pattern']">Code invalide.</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="expiryMonth">Mois d'expiration:</label>
+      <input id="expiryMonth" formControlName="expiryMonth" type="number" placeholder="MM" mask="M0"/>
+      <div *ngIf="cardForm.get('expiryMonth')?.invalid && cardForm.get('expiryMonth')?.touched">
+        <small *ngIf="cardForm.get('expiryMonth')?.errors?.['required']">Le mois est obligatoire.</small>
+        <small *ngIf="cardForm.get('expiryMonth')?.errors?.['min']">Mois invalide.</small>
+        <small *ngIf="cardForm.get('expiryMonth')?.errors?.['max']">Mois invalide.</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="expiryYear">Année d'expiration:</label>
+      <input id="expiryYear" formControlName="expiryYear" type="number" placeholder="YYYY" mask="0000"/>
+      <div *ngIf="cardForm.get('expiryYear')?.invalid && cardForm.get('expiryYear')?.touched">
+        <small *ngIf="cardForm.get('expiryYear')?.errors?.['required']">L'année est obligatoire.</small>
+        <small *ngIf="cardForm.get('expiryYear')?.errors?.['min']">Année invalide.</small>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="cardForm.invalid">Valider</button>
+  </form>
+</div>

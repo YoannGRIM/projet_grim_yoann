@@ -1,0 +1,41 @@
+<header>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+      <ul>
+        <li>
+          <a routerLink="/home" routerLinkActive="active">Home</a>
+        </li>
+
+        @if(this.authService.isLoggedIn())
+        {
+          <li>
+            <button (click)="onLogout()" class="btn btn-primary">Logout</button>
+          </li>
+          <li>
+            <a routerLink="/catalog" routerLinkActive="active">Catalog</a>
+          </li>
+          <li>
+            <a routerLink="/basket" routerLinkActive="active">Basket</a>
+          </li>
+          <li>
+            <a routerLink="/account" routerLinkActive="active">Account</a>
+          </li>
+        }
+        @else
+        {
+          <li>
+            <a routerLink="/login" routerLinkActive="active">Login</a>
+          </li>
+          <li>
+            <a routerLink="/register" routerLinkActive="active">Register</a>
+          </li>
+        }
+      </ul>
+    </nav>
+</header>
+<div class="layout">
+  <!-- Main Content -->
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

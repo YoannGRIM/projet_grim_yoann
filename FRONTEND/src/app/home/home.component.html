@@ -1,0 +1,9 @@
+<div class="layout">
+  @if(authService.isLoggedIn()) {
+    <app-header></app-header>
+  }
+  @else {
+    <p>Vous n'êtes pas connecté</p>
+  }
+
+</div>

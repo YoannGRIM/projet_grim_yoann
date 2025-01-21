@@ -1,0 +1,69 @@
+/* Conteneur principal pour la page de connexion */
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Formulaire de connexion */
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Champs de formulaire */
+.login-container label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.login-container input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+/* Messages d'erreur */
+.login-container small {
+  font-size: 12px;
+  color: #d9534f;
+  margin-top: 5px;
+}
+
+/* Bouton de soumission */
+.login-container button[type="submit"] {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.login-container button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.login-container button[type="submit"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

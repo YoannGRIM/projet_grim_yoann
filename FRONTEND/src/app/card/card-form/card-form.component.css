@@ -1,0 +1,103 @@
+/* Container principal du formulaire */
+.card-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style du formulaire */
+.card-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Labels */
+.card-form label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Champs de saisie */
+.card-form input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.card-form input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+/* Masque de saisie */
+.card-form input::placeholder {
+  color: #888;
+}
+
+/* Groupes de champ (structure des champs) */
+.card-form div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Affichage des messages d'erreur */
+.card-form small {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Bouton de soumission */
+.card-form button {
+  padding: 12px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card-form button:hover {
+  background-color: #45a049;
+}
+
+.card-form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Champs invalides */
+.card-form input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+/* Style de validation des champs */
+.card-form input.ng-valid.ng-touched {
+  border-color: #4CAF50;
+}
+
+/* Aligner les erreurs avec les champs */
+.card-form .error-message {
+  margin-top: 5px;
+  color: red;
+}
+
+/* Styles supplémentaires pour les petits écrans */
+@media (max-width: 600px) {
+  .card-form {
+    width: 90%;
+  }
+}

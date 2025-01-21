@@ -1,0 +1,27 @@
+<div class="card-list">
+  <h2>Liste des Cartes</h2>
+
+  <!-- Input de recherche -->
+  <input
+    #searchQuery
+    type="text"
+    (input)="onSearchUpdated(searchQuery.value)"
+    placeholder="Filtrer par nom" />
+
+  <!-- Conteneur des cartes (cardContainer) -->
+  <div class="card-container">
+    <div *ngFor="let card of filteredCards()">
+      <div class="card">
+        <h3>{{ card.cardName }}</h3>
+
+        <!-- Détails de la carte -->
+        <div class="card-details">
+          <p *ngIf="card.cardNumber !== undefined">{{ card.cardNumber | cardNumberFormatter }}</p>
+          <p><strong>EXPIRE FIN</strong> {{ card.expiryMonth }}/{{ card.expiryYear }}</p>
+          <p *ngIf="card.ccv !== undefined"><strong>CCV</strong> {{ card.ccv | cardCcvFormatter }}</p>
+        </div>
+        <button *ngIf="card.cardNumber !== undefined" (click)="deleteCard(card.cardNumber)">Supprimer</button>
+      </div>
+    </div>
+  </div>
+</div>

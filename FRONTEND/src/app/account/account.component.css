@@ -1,0 +1,85 @@
+/* Conteneur principal */
+.account-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Titre principal */
+.account-container h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+/* Formulaire */
+.account-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Champs de formulaire */
+.account-container label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.account-container input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.account-container input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+/* Messages d'erreur */
+.account-container small {
+  font-size: 12px;
+  color: #d9534f;
+  margin-top: 5px;
+}
+
+/* Bouton de soumission */
+.account-container button[type="submit"] {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.account-container button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.account-container button[type="submit"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Cartes (app-card-form et app-card-list) */
+app-card-form,
+app-card-list {
+  margin-top: 30px;
+  display: block;
+}

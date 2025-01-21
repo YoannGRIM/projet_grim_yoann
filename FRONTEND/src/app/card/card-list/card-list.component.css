@@ -1,0 +1,118 @@
+/* Style de la liste des cartes */
+.card-list {
+  width: 100%;
+  max-width: 1000px; /* Largeur maximale du conteneur */
+  margin: 0 auto;
+  padding: 20px;
+  background: #f7f7f7;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Titre de la liste des cartes */
+.card-list h2 {
+  font-size: 28px; /* Taille du titre */
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Input de recherche */
+.card-list input {
+  padding: 12px;
+  font-size: 18px; /* Taille du texte de l'input */
+  width: 100%;
+  max-width: 350px; /* Largeur maximale de l'input */
+  margin-bottom: 60px; /* Augmenter l'espacement entre l'input et les cartes */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  display: block;
+  margin: 30px auto;
+}
+
+/* Conteneur des cartes */
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Permet de faire passer les cartes sur plusieurs lignes si nécessaire */
+  justify-content: space-around; /* Espacement des cartes de manière uniforme */
+  gap: 30px; /* Espace entre les cartes */
+}
+
+/* Style des cartes individuelles */
+.card {
+  background: linear-gradient(135deg, #7CB9E8, #00308F);
+  color: white;
+  padding: 20px; /* Réduire l'espace autour du contenu */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 400px; /* Largeur des cartes */
+  box-sizing: border-box;
+  height: 250px; /* Réduire la hauteur des cartes */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Titre de la carte */
+.card h3 {
+  font-size: 24px; /* Augmenter la taille du titre de la carte */
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Détails de la carte */
+.card-details p {
+  font-size: 18px; /* Augmenter la taille du texte des détails */
+  margin: 8px 0; /* Ajouter plus d'espace entre les paragraphes */
+}
+
+.card-details strong {
+  font-weight: bold;
+}
+
+/* Style du bouton */
+.card button {
+  padding: 12px 20px; /* Ajuster la taille du bouton */
+  background-color: #FF3B30;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px; /* Augmenter la taille du texte dans le bouton */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.card button:hover {
+  background-color: #D32F2F;
+}
+
+/* Responsivité */
+@media (max-width: 600px) {
+  .card-list {
+    padding: 10px;
+  }
+
+  .card {
+    padding: 20px;
+    max-width: 100%; /* Les cartes prennent toute la largeur sur petits écrans */
+    height: 220px; /* Réduire légèrement la hauteur sur petits écrans */
+  }
+
+  .card h3 {
+    font-size: 20px; /* Taille réduite du titre */
+  }
+
+  .card-details p {
+    font-size: 16px; /* Taille réduite des détails */
+  }
+
+  .card button {
+    font-size: 14px; /* Taille réduite du texte du bouton */
+  }
+}
