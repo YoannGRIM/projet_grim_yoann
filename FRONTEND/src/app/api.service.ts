@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Client } from '../shared/models/client';
 import { Product } from '../shared/models/product';
 import { environment } from '../environments/environment';
+import { CatalogFilter } from '../shared/models/catalog-filter';
 
 @Injectable({
   providedIn: 'root'
@@ -39,7 +40,7 @@ export class ApiService {
     return this.http.put<Client>(environment.backendUpdateClient, client);
   }
 
-  public getCatalog(): Observable<Product[]> {
-    return this.http.get<Product[]>(environment.backendCatalogue);
+  public getCatalog(filter?: CatalogFilter): Observable<Product[]> {
+    return this.http.get<Product[]>(environment.backendCatalogue + '?' + filter?.toQueryString());
   }
 }

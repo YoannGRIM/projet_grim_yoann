@@ -4,7 +4,7 @@
     <app-search-product (search)="onSearch($event)"></app-search-product>
   </div>
   <div class="flex-grow-1 ms-3">
-    <div class="row" *ngIf="filteredProducts$ | async as products; else unauthorize">
+    <div class="row" *ngIf="products$ | async as products; else unauthorize">
       <div class="col-md-4 mb-3" *ngFor="let item of products">
         <div class="card h-100">
           <!-- <img [src]="item.image" class="card-img-top fixed-image" [alt]="item.name"> -->
